@@ -1,5 +1,6 @@
 from turtle import Turtle, Screen
 from paddle import Paddle, PaddleLeft
+from ball import Ball
 
 
 
@@ -12,6 +13,7 @@ screen.tracer(0)
 tim = Turtle()
 paddle_right = Paddle((350, 0))
 paddle_left = Paddle((-350, 0))
+ball = Ball()
 
 play_game = True
 
@@ -24,5 +26,6 @@ screen.onkey(paddle_left.move_down, 's')
 
 while play_game:
     screen.update()
+    ball.move()
 
 screen.exitonclick()
