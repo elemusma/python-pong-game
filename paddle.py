@@ -1,6 +1,7 @@
 from turtle import Turtle
 UP = 90
 DOWN = 270
+MOVE = 20
 
 class Paddle(Turtle):
     def __init__(self, position) -> None:
@@ -17,12 +18,12 @@ class Paddle(Turtle):
     
     def move_up(self):
         if self.ycor() < 250:
-            self.forward(10)
+            self.forward(MOVE)
 
     
     def move_down(self):
         if self.ycor() > -240:
-            self.backward(10)
+            self.backward(MOVE)
 
 
 class PaddleLeft(Paddle):
