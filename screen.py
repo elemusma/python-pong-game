@@ -28,4 +28,24 @@ while play_game:
     screen.update()
     ball.move()
 
+    # Detect collision with wall
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        # ball needs to bounce
+        ball.bounce_y()
+
+    # Detect collision with r_paddle
+    if ball.distance(paddle_right) < 50 and ball.xcor() > 320 or ball.distance(paddle_left) < 50 and ball.xcor() < -320:
+        ball.bounce_x()
+        # print('made contact')
+
+    # Detect paddle_right missing ball
+    if ball.xcor() > 350:
+        ball.reset_position()
+
+    # Detect paddle_left missing ball
+    if ball.xcor() < -350:
+        ball.reset_position()
+
+    # Detect scoring
+
 screen.exitonclick()
